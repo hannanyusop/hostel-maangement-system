@@ -111,7 +111,7 @@ form {
 form ul {
   margin: 0;
   padding: 0;
-  width: 100%
+  width: 100%;
   list-style: none;
 
 }
@@ -150,7 +150,7 @@ form label {
   color: #4f6fad;
   font-size: 1em;
 }
-form input {
+form input, .form-control {
   margin: 0 0 0.5em 0;
   border: 1px solid #ccc;
   padding: 6px 10px;

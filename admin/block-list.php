@@ -61,10 +61,10 @@ function filterTable($query)
                     <td><?php echo $row['gender'];?></td>
                     
                     <td>
-                    <a href="room-edit.php?id=<?= $row["id"]; ?>">Edit</a>
+                    <a href="block-edit.php?id=<?= $row["id"]; ?>">Edit</a>
                     </td>
                     <td align="center">
-                    <a href="room-delete.php?id=<?= $row["id"]; ?>">Delete</a>
+                    <a href="block-delete.php?id=<?= $row["id"]; ?>">Delete</a>
                     </td>
                 </tr>
                 <?php endwhile;?>

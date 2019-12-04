@@ -7,10 +7,22 @@
         $block = $query->fetch_assoc();
 
         if(!$block){
-            echo "<script>alert('Invalid block!');window.location='room-list.php'</script>";
+            echo "<script>alert('Invalid block!');window.location='block-list.php'</script>";
+        }
+
+        if(isset($_POST['submit'])){
+
+            $update_q = $link->query("UPDATE block SET name='$_POST[name]',gender='$_POST[gender]' WHERE id=$_GET[id]");
+            if(!$update_q){
+                echo "<script>alert('Failed to update!');window.location='block-edit.php?id=$_GET[id]'</script>";
+                exit();
+            }
+
+            echo "<script>alert('Data updated!');window.location='block-edit.php?id=$_GET[id]'</script>";
+            exit();
         }
     }else{
-        echo "<script>alert('Invalid parameter!');window.location='room-list.php'</script>";
+        echo "<script>alert('Invalid parameter!');window.location='block-list.php'</script>";
     }
 
 ?>
@@ -30,7 +42,7 @@
                 <ul>
                     <p class="left">
                         <label for="roomno">Name</label>
-                        <input type="text" name="roomno" value="<?= $block['name'] ?>">
+                        <input type="text" name="name" value="<?= $block['name'] ?>">
                     </p>
                     <p class="left">
                         <label for="gender">Gender</label>
@@ -38,8 +50,8 @@
                         <input type="radio" name="gender" value="F" <?= ($block['gender'] == 'F')? 'CHECKED ' : ' ' ?>required>Female
                     </p>
                     <li>
-                        <input type="submit" name="Submit" value="Submit">
-                        <a href="student.php">Back</a>
+                        <input type="submit" name="submit" value="Submit">
+                        <a href="block-list.php">Back</a>
                         <small>or press <strong>enter</strong></small>
                     </li>
                 </ul>
