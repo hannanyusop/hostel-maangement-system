@@ -8,9 +8,11 @@
     <img src="../asset/img/b.png">
     <nav>
         <ul>
-            <li><a href="../profile.php" class="activeLink" >Home</a></li>
-            <li><a href="../student.php">Student Registration</a></li>
-            <li><a href="../bRoom.php">Hostel Room</a></li>
+            <li><a href="profile.php" class="activeLink" >Home</a></li>
+            <li><a href="student-add.php">Student Registration</a></li>
+            <li><a href="student.php">Student List</a></li>
+            <li><a href="block-list.php">Block Management</a></li>
+            <li><a href="room-list.php">Room Management</a></li>
             <li><a href="booking-list.php">Hostel Application</a></li>
             <li><a href="#">Contact</a></li>
             <li><a href="../logout.php">Log Out</a></li>

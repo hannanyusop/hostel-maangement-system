@@ -1,9 +1,11 @@
 <?php
-include('session.php');
-if(!isset($_SESSION['login_user'])){
-header("location: index.php"); // Redirecting To Home Page
+require_once 'config.php';
+$var_matricno="";
+if(isset($_GET['matricno']) && ( "" != ($_GET['matricno'])) ){
+$var_matricno=$_GET['matricno'];
 }
 ?>
+
 <!DOCTYPE html>
 <html>
 <head>
@@ -24,6 +26,7 @@ header img {
 body {
     height: 125vh;
     background-image: url();
+     background-color: #fff; 
     background-size: cover;
     font-family: sans-serif;
     margin-top: 80px;
@@ -67,22 +70,14 @@ header li a {
            <img src="asset/img/b.png">
             <nav>
                 <ul>
-                    <li><a href="profile.php" class="activeLink" >Home</a></li>
-                    <li><a href="formBR.php">Hostel Block </a></li>
-                    <li><a href="roomH.php">Hostel Room </a></li>
-                    <li><a href="viewR.php">View Block & Room</a></li>
+                    <li><a href="admin/profile.php" class="activeLink" >Home</a></li>
+                    <li><a href="regS.php">STUDENT REGISTRATION</a></li>
+                    <li><a href="student.php">VIEW STUDENT RECORD</a></li>
                  
               
                 </ul>
             </nav>
         </header>
-
-<div id="main">
-  <h2>HOSTEL BLOCK & ROOM </h2>
-  
-
-</div>
-
 <?php
 
 require_once 'config.php';
@@ -92,12 +87,12 @@ if(isset($_POST['search']))
     $valueToSearch = $_POST['valueToSearch'];
     // search in all table columns
     // using concat mysql function
-    $query ="SELECT * FROM `block` WHERE CONCAT( `name`, `gender`) LIKE '%".$valueToSearch."%' ";
+    $query ="SELECT * FROM `regstud` WHERE CONCAT( `studentname`, `matricno`, `yearsem`, `block`) LIKE '%".$valueToSearch."%' ";
     $search_result = filterTable($query);
     
 }
  else {
-    $query = "SELECT * FROM `block`";
+    $query = "SELECT * FROM `regstud`";
     $search_result = filterTable($query);
 }
 
@@ -110,7 +105,6 @@ function filterTable($query)
 }
 
 ?>
-
 
 <!DOCTYPE html>
 <html>
@@ -125,30 +119,48 @@ function filterTable($query)
     </head>
     <body>
         
-        <form action="bRoom.php" method="post">
+        <form action="student.php" method="post">
             <input type="text" name="valueToSearch" placeholder="Value To Search"><br><br>
             <input type="submit" name="search" value="Filter"><br><br>
             
             <table>
                 <tr>
-                    <th><strong>Block Name</strong></th>
+                    <th><strong>ID</strong></th>
+                    <th><strong>Student Name</strong></th>
+                    <th><strong>Matric Number</strong></th>
+                    <th><strong>Faculty</strong></th>
+                    <th><strong>Programme</strong></th>
+                    <th><strong>Year/Sem</strong></th>
+                    <th><strong>Block</strong></th>
+                    <th><strong>Room Number</strong></th>
+                    <th><strong>Email</strong></th>
+                    <th><strong>Address</strong></th>
                     <th><strong>Gender</strong></th>
+                    <th><strong>Phone Number</strong></th>
                     <th><strong>Edit</strong></th>
                     <th><strong>Delete</strong></th>
-                    
                 </tr>
 
       <!-- populate table from mysql database -->
                 <?php while($row = mysqli_fetch_array($search_result)):?>
                 <tr>
-                    <td><?php echo $row['name'];?></td>
+                    <td><?php echo $row['id'];?></td>
+                    <td><?php echo $row['studentname'];?></td>
+                    <td><?php echo $row['matricno'];?></td>
+                    <td><?php echo $row['faculty'];?></td>
+                    <td><?php echo $row['prog'];?></td>
+                     <td><?php echo $row['yearsem'];?></td>
+                    <td><?php echo $row['block'];?></td>
+                    <td><?php echo $row['roomno'];?></td>
+                    <td><?php echo $row['email'];?></td>
+                     <td><?php echo $row['address'];?></td>
                     <td><?php echo $row['gender'];?></td>
-                    
+                    <td><?php echo $row['phoneno'];?></td>
                     <td>
-                    <a href="editS_form.php?name=<?php echo $row["name"]; ?>">Edit</a>
+                    <a href="editS_form.php?matricno=<?php echo $row["matricno"]; ?>">Edit</a>
                     </td>
                     <td align="center">
-                    <a href="delete.php?name=<?php echo $row["name"]; ?>">Delete</a>
+                    <a href="delete.php?matricno=<?php echo $row["matricno"]; ?>">Delete</a>
                     </td>
                 </tr>
                 <?php endwhile;?>

@@ -19,7 +19,7 @@
           <ul>
               <p class="left">
                 <label for="gender">SELECT BLOCK</label>
-                <select name="block">
+                <select name="block" class="form-control" required>
                   <option>SELECT</option>
                   <?php  if($blocks_q->num_rows > 0){ while($block = $blocks_q->fetch_assoc()){ ?>
                     <option value="<?= $block['id'] ?>"><?= $block['name']; ?></option>

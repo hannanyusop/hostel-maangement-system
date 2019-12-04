@@ -36,4 +36,14 @@
 
 	    return (is_null($status))? $statuses : $statuses[$status];
     }
+
+function getRoomStatus($status = null){
+
+    $statuses = [
+        0 => 'Available',
+        1 => 'Not Available',
+    ];
+
+    return (is_null($status))? $statuses : $statuses[$status];
+}
 ?>

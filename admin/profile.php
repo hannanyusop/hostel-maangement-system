@@ -1,5 +1,6 @@
 <?php
-include('session.php');
+include 'admin/auth.php';
+dd($_SESSION);
 if(!isset($_SESSION['login_user'])){
 header("location: index.php"); // Redirecting To Home Page
 }

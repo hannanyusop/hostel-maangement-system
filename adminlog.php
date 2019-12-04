@@ -1,8 +1,35 @@
 <?php
-include('login.php'); // Includes Login Script
-if(isset($_SESSION['login_user'])){
-header("location: profile.php"); // Redirecting To Profile Page
+
+include 'config.php';
+
+$error = ''; // Variable To Store Error Message
+if (isset($_POST['submit'])) {
+    if (empty($_POST['username']) || empty($_POST['password'])) {
+        $error = "Username or Password is invalid";
+    } else {
+        $username = $_POST['username'];
+        $password = $_POST['password'];
+        $query = "SELECT username, password from login where username=? AND password=? LIMIT 1";
+
+        $stmt = $link->prepare($query);
+        $stmt->bind_param("ss", $username, $password);
+        $stmt->execute();
+        $stmt->bind_result($username, $password);
+        $stmt->store_result();
+        if ($stmt->fetch()){
+            $_SESSION['login_user'] = $username;
+            $_SESSION['auth'] = [
+                'role' => 'admin',
+                'id' => 1,
+                'username' => $username
+            ];
+            header("location: admin/profile.php"); // Redirecting To Profile Page
+        }
+
+    }
+
 }
+
 ?>
 <!DOCTYPE html>
 <html>
@@ -12,7 +39,7 @@ header("location: profile.php"); // Redirecting To Profile Page
 </head>
 <body>
 <div id="login">
-  <form action="" method="POST">
+  <form method="POST">
 <div class="wrapper fadeInDown">
   <div id="formContent">
     <!-- Tabs Titles -->
