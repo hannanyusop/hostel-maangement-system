@@ -9,9 +9,9 @@
     <img src="../../asset/img/b.png" alt="icon">
     <nav>
         <ul>
-            <li><a href="Sdash.php" class="activeLink" >Home</a></li>
+            <li><a href="dashboard.php" class="activeLink" >Home</a></li>
             <li><a href="apply.php">Hostel Application</a></li>
-            <li><a href="#">Status</a></li>
+            <li><a href="application-list.php">Application List</a></li>
             <li><a href="../../logout.php">Log Out</a></li>
         </ul>
     </nav>

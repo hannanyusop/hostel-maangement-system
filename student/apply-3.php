@@ -1,7 +1,9 @@
 
 <?php
     include('auth.php');
-    $blocks_q = $link->query("SELECT * FROM block WHERE gender='$auth[gender]'");
+    include 'include/booking-check.php';
+
+$blocks_q = $link->query("SELECT * FROM block WHERE gender='$auth[gender]'");
 
     if(isset($_POST['room'])){
 

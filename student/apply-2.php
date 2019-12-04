@@ -1,8 +1,10 @@
 
 <?php
     include('auth.php');
+include 'include/booking-check.php';
 
-    if(!isset($_POST['block']) || !isset($_SESSION['booking'])){
+
+if(!isset($_POST['block']) || !isset($_SESSION['booking'])){
         echo "<script>alert('Please select block!');window.location='apply.php';</script>";
     }
 

@@ -25,4 +25,15 @@
 	function dd($string){
 	    var_dump($string);exit();
     }
+
+	function getBookingStatus($status = null){
+
+	    $statuses = [
+	        1 => 'Pending',
+            2 => 'Rejected',
+            3 => 'Approved'
+        ];
+
+	    return (is_null($status))? $statuses : $statuses[$status];
+    }
 ?>

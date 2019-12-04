@@ -1,6 +1,10 @@
 
 <?php
     include('auth.php');
+
+    include 'include/booking-check.php';
+
+
     $blocks_q = $link->query("SELECT * FROM block WHERE gender='$auth[gender]'");
 ?>
 <html lang="en">
