@@ -6,14 +6,14 @@ if(isset($_GET['data'])) {
     $data = $_GET['data'];
     $query = $link->query("SELECT *,b.id as bookingId,b.status as bookingStatus
                     FROM bookings as b
-                    LEFT JOIN regstud as s ON s.id=b.id
+                    LEFT JOIN regstud as s ON s.id=b.student_id
                     LEFT JOIN rooms as r ON r.id= b.room_id
                     ");
 
 } else {
     $query = $link->query("SELECT *,b.id as bookingId,b.status as bookingStatus
                     FROM bookings as b
-                    LEFT JOIN regstud as s ON s.id=b.id
+                    LEFT JOIN regstud as s ON s.id=b.student_id
                     LEFT JOIN rooms as r ON r.id= b.room_id
                     ");
 }
@@ -33,9 +33,9 @@ if(isset($_GET['data'])) {
                 <th>ID</th>
                 <th>Matric No</th>
                 <th>Student Name</th>
-                <td>Room Number</td>
-                <td>Status</td>
-                <td></td>
+                <th>Room Number</th>
+                <th>Status</th>
+                <th></th>
             </tr>
             <?php while($row = $query->fetch_assoc()):?>
             <tr>
@@ -44,7 +44,7 @@ if(isset($_GET['data'])) {
                 <td><?= $row['studentname'] ?></td>
                 <td><?= $row['rNo'] ?></td>
                 <td><?= getBookingStatus($row['bookingStatus']) ?></td>
-                <td align="center"><a href="../delete.php?id=<?php echo $row['bookingId'] ?>">Response</a></td>
+                <td align="center"><a href="booking-response.php?id=<?php echo $row['bookingId'] ?>">Response</a></td>
             </tr>
             <?php endwhile;?>
         </table>

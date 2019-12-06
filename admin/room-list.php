@@ -24,7 +24,7 @@ if(isset($_GET['data']))
     
 }
  else {
-    $query = "SELECT *,r.id as room_id FROM rooms as r LEFT JOIN block as b ON b.id=r.block_id";
+    $query = "SELECT *,r.id as room_id FROM rooms as r LEFT JOIN block as b ON b.id=r.block_id LIMIT 20 OFFSET 20";
     $search_result = filterTable($query);
 }
 

@@ -27,7 +27,7 @@ header("location: student/dashboard.php"); // Redirecting To Profile Page
     <!-- Login Form -->
     <form>
       <input type="text" id="name" class="fadeIn second" name="email" placeholder="email">
-      <input type="text" id="password" class="fadeIn third" name="matricno" placeholder="matricno" hidden=" ">
+      <input type="password" id="password" class="fadeIn third form-control" name="matricno" placeholder="matricno">
       <input type="submit" class="fadeIn fourth" name="submit" value="Log In">
 
   </div>

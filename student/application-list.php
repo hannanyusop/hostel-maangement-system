@@ -17,6 +17,7 @@ include('auth.php');
                 <tr>
                     <th>#</th>
                     <th>Room</th>
+                    <th>Price</th>
                     <th>Booking Date</th>
                     <th>Status</th>
                 </tr>
@@ -24,8 +25,9 @@ include('auth.php');
                     <tr>
                         <td><?= $row['id']; ?></td>
                         <td><?= $row['rNo']; ?></td>
+                        <td><?= $row['price']; ?></td>
                         <td><?= $row['created_at']; ?></td>
-                        <td><?= $row['booking_status']; ?></td>
+                        <td><?= getBookingStatus($row['booking_status']) ?></td>
                     </tr>
                 <?php } ?>
             </table>
