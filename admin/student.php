@@ -14,7 +14,7 @@
         $search_result = filterTable($query);
 
     } else {
-        $query = "SELECT * FROM `regstud`";
+        $query = "SELECT * FROM regstud as s LEFT JOIN rooms as r ON r.studentid=s.id";
         $search_result = filterTable($query);
     }
 
@@ -40,7 +40,6 @@
                     <th><strong>Faculty</strong></th>
                     <th><strong>Programme</strong></th>
                     <th><strong>Year/Sem</strong></th>
-                    <th><strong>Block</strong></th>
                     <th><strong>Room Number</strong></th>
                     <th><strong>Email</strong></th>
                     <th><strong>Address</strong></th>
@@ -58,18 +57,17 @@
                     <td><?php echo $row['matricno'];?></td>
                     <td><?php echo $row['faculty'];?></td>
                     <td><?php echo $row['prog'];?></td>
-                     <td><?php echo $row['yearsem'];?></td>
-                    <td><?php echo $row['block'];?></td>
-                    <td><?php echo $row['roomno'];?></td>
+                    <td><?php echo $row['yearsem'];?></td>
+                    <td><?php echo $row['rNo'];?></td>
                     <td><?php echo $row['email'];?></td>
                      <td><?php echo $row['address'];?></td>
                     <td><?php echo $row['gender'];?></td>
                     <td><?php echo $row['phoneno'];?></td>
                     <td>
-                    <a href="student-edit.php?matricno=<?php echo $row["matricno"]; ?>">Edit</a>
+                    <a href="student-edit.php?id=<?php echo $row["id"]; ?>">Edit</a>
                     </td>
                     <td align="center">
-                    <a onclick="return confirm('Are you sure want to delete this data?')" href="student-delete.php?matricno=<?= $row["matricno"]; ?>">Delete</a>
+                    <a onclick="return confirm('Are you sure want to delete this data?')" href="student-delete.php?id=<?= $row["id"]; ?>">Delete</a>
                     </td>
                 </tr>
                 <?php endwhile;?>

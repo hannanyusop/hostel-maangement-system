@@ -63,7 +63,7 @@ function filterTable($query)
                     <td><?php echo $row['rNo'];?></td>
                     <td><?php echo $row['name'];?></td>
                     <td><?= getRoomStatus($row['status']) ?></td>
-                    <td><?= "RM".$row['price'];?></td>
+                    <td><?= $row['price'];?></td>
                     <td>
                     <a href="room-edit.php?id=<?= $row["room_id"]; ?>">Edit</a> |
                     <a href="room-delete.php?id=<?= $row["room_id"]; ?>">Delete</a>

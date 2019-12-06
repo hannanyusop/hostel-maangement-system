@@ -1,7 +1,7 @@
 <?php
 include('auth.php');
 
-    $booking_q = $link->query("SELECT *,b.status as booking_status FROM bookings as b
+    $booking_q = $link->query("SELECT *,b.status as booking_status,b.id as bookingId  FROM bookings as b
             LEFT JOIN rooms as r ON b.room_id=r.id 
             WHERE student_id=$auth[id] ORDER BY b.status asc");
 ?>
@@ -20,6 +20,7 @@ include('auth.php');
                     <th>Price</th>
                     <th>Booking Date</th>
                     <th>Status</th>
+                    <th></th>
                 </tr>
                 <?php   while ($row = $booking_q->fetch_assoc()){ ?>
                     <tr>
@@ -28,6 +29,7 @@ include('auth.php');
                         <td><?= $row['price']; ?></td>
                         <td><?= $row['created_at']; ?></td>
                         <td><?= getBookingStatus($row['booking_status']) ?></td>
+                        <td><a href="booking-receipt.php?id=<?= $row['bookingId'] ?>">View Full</a> </td>
                     </tr>
                 <?php } ?>
             </table>

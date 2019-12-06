@@ -5,26 +5,24 @@ include 'auth.php';
 
 if(isset($_POST['Submit'])) {
 
-    $id = $_GET['matricno'];
+    $id = $_GET['id'];
 
     $studentname = $_POST['studentname'];
     $faculty = $_POST['faculty'];
     $prog = $_POST['prog'];
     $yearsem = $_POST['yearsem'];
-    $block = $_POST['block'];
-    $roomno = $_POST['roomno'];
     $email = $_POST['email'];
     $address = $_POST['address'];
     $gender = $_POST['gender'];
     $phoneno = $_POST['phoneno'];
+    $matricno = $_POST['matricno'];
 
     //mysql query to update data
-    $query= "UPDATE regstud SET studentname='$studentname',faculty='$faculty',prog='$prog',yearsem='$yearsem',block='$block',roomno='$roomno',email='$email',address='$address',gender='$gender',phoneno='$phoneno' WHERE matricno = '$id'";
+    $query= "UPDATE regstud SET matricno = '$matricno',studentname='$studentname',faculty='$faculty',prog='$prog',yearsem='$yearsem',email='$email',address='$address',gender='$gender',phoneno='$phoneno' WHERE id = '$id'";
 
     $result = mysqli_query($link, $query);
 
-    if($result)
-    {
+    if($result) {
         echo "<script>alert('Data updated!');window.location='student.php'</script>";
 
     }else {
@@ -34,8 +32,7 @@ if(isset($_POST['Submit'])) {
 
 }
 
-    $var_matricno=$_GET['matricno'];
-    $query = $link->query("SELECT * FROM regstud WHERE matricno='$_GET[matricno]'");
+    $query = $link->query("SELECT * FROM regstud WHERE id='$_GET[id]'");
     $row = $query->fetch_assoc();
 ?>
 <html>
@@ -75,15 +72,6 @@ if(isset($_POST['Submit'])) {
             <p class="left">
             <label for="yearsem">Year/Semester</label>
             <input type="text" name="yearsem" value="<?= $row['yearsem'] ?>"/>
-          </p>
-          <p class="left">
-            <label for="block">Block</label>
-            <input type="text" name="block" value="<?= $row['block'] ?>" required>
-     
-          </p>     
-          <p class="left">
-            <label for="roomno">Room NO</label>
-            <input type="text" name="roomno" value="<?= $row['roomno'] ?>" />
           </p>
           <p>
             <label for="email">Email <span class="req">*</span></label>

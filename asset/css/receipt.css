@@ -1,0 +1,123 @@
+img + div {
+    display: none !important; /* Hides image downloading in Gmail */
+}
+@media screen and (max-width: 600px) {
+    /** Gmail **/
+    *[class="Gmail"] {
+        display: none !important
+    }
+    /** Wrapper **/
+    .Wrapper {
+        max-width: 600px !important;
+        min-width: 320px !important;
+        width: 100% !important;
+        border-radius: 0 !important;
+    }
+    .Section {
+        width: 100% !important;
+    }
+    .Section--last {
+        border-bottom-left-radius: 0 !important;
+        border-bottom-right-radius: 0 !important;
+    }
+    /** Notice **/
+    .Notice {
+        border-bottom-left-radius: 0 !important;
+        border-bottom-right-radius: 0 !important;
+    }
+    /** Header **/
+    .Header .Header-left,
+    .Header .Header-right {
+        border-top-left-radius: 0 !important;
+        border-top-right-radius: 0 !important;
+    }
+    /** Content **/
+    .Content {
+        width: auto !important;
+    }
+    /** Divider **/
+    .Divider--kill {
+        display: none !important;
+        height: 0 !important;
+        width: 0 !important;
+    }
+    /** Spacer **/
+    .Spacer--gutter {
+        width: 20px !important;
+    }
+    .Spacer--kill {
+        height: 0 !important;
+        width: 0 !important;
+    }
+    .Spacer--emailEnds {
+        height: 0 !important;
+    }
+    /** Target **/
+    .Target img {
+        display: none !important;
+        height: 0 !important;
+        margin: 0 !important;
+        max-height: 0 !important;
+        min-height: 0 !important;
+        mso-hide: all !important;
+        padding: 0 !important;
+        width: 0 !important;
+        font-size: 0 !important;
+        line-height: 0 !important;
+    }
+    .Target::before {
+        content: '' !important;
+        display: block !important;
+    }
+    /** Header **/
+    .Header-area {
+        width: 100% !important;
+    }
+    .Header-left,
+    .Header-left::before,
+    .Header-right,
+    .Header-right::before {
+        height: 156px !important;
+        width: auto !important;
+        background-size: 252px 156px !important;
+    }
+    .Header-left {
+        background-image: url('https://stripe-images.s3.amazonaws.com/notifications/hosted/20180110/Header/Left.png') !important;
+        background-position: bottom right !important;
+    }
+    .Header-right {
+        background-image: url('https://stripe-images.s3.amazonaws.com/notifications/hosted/20180110/Header/Right.png') !important;
+        background-position: bottom left !important;
+    }
+    .Header-icon,
+    .Header-icon::before {
+        width: 96px !important;
+        height: 156px !important;
+        background-size: 96px 156px !important;
+    }
+    .Header-icon {
+        width: 96px !important;
+        height: 156px !important;
+        background-image: url('https://stripe-images.s3.amazonaws.com/emails/acct_20fyhGDC0ObZ9nUhH3S1/13/twelve_degree_icon@2x.png') !important;
+        background-position: bottom center !important;
+    }
+    /** Table **/
+    .Table-content {
+        width: auto !important;
+    }
+    .Table-rows {
+        width: 100% !important;
+    }
+}
+@media screen and (max-width: 599px) {
+    /** Data Blocks **/
+    .DataBlocks-item {
+        display: block !important;
+        width: 100% !important;
+    }
+    .DataBlocks-spacer {
+        display: block !important;
+        height: 12px !important;
+        width: auto !important;
+    }
+}

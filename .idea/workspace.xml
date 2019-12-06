@@ -2,16 +2,14 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="1a8537c7-f9da-44c0-98e3-cc45d7f6fb29" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/asset/css/receipt.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/admin/booking-list.php" beforeDir="false" afterPath="$PROJECT_DIR$/admin/booking-list.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/admin/include/header.php" beforeDir="false" afterPath="$PROJECT_DIR$/admin/include/header.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/admin/room-list.php" beforeDir="false" afterPath="$PROJECT_DIR$/admin/room-list.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/asset/css/style.css" beforeDir="false" afterPath="$PROJECT_DIR$/asset/css/style.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/admin/student-add.php" beforeDir="false" afterPath="$PROJECT_DIR$/admin/student-add.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/admin/student-delete.php" beforeDir="false" afterPath="$PROJECT_DIR$/admin/student-delete.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/admin/student-edit.php" beforeDir="false" afterPath="$PROJECT_DIR$/admin/student-edit.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/admin/student.php" beforeDir="false" afterPath="$PROJECT_DIR$/admin/student.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/student/application-list.php" beforeDir="false" afterPath="$PROJECT_DIR$/student/application-list.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/student/include/booking-check.php" beforeDir="false" afterPath="$PROJECT_DIR$/student/include/booking-check.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/student/include/header.php" beforeDir="false" afterPath="$PROJECT_DIR$/student/include/header.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/studlog.php" beforeDir="false" afterPath="$PROJECT_DIR$/studlog.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/style.css" beforeDir="false" afterPath="$PROJECT_DIR$/style.css" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -31,7 +29,7 @@
   <component name="PropertiesComponent">
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/admin" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/student" />
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
     <property name="nodejs_npm_path_reset_for_default_project" value="true" />
   </component>
@@ -43,6 +41,7 @@
       <recent name="C:\laragon\www\hostel-maangement-system\student" />
     </key>
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/student" />
       <recent name="$PROJECT_DIR$/admin" />
       <recent name="C:\laragon\www\hostel-maangement-system\admin" />
       <recent name="C:\laragon\www\hostel-maangement-system" />
@@ -73,7 +72,7 @@
       <updated>1575428986273</updated>
       <workItem from="1575428987601" duration="19429000" />
       <workItem from="1575616347555" duration="1449000" />
-      <workItem from="1575617978661" duration="3522000" />
+      <workItem from="1575617978661" duration="7685000" />
     </task>
     <servers />
   </component>

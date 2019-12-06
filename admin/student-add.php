@@ -8,15 +8,13 @@ if(isset($_POST['submit'])){
     $var_faculty = $_POST['faculty'];
     $var_prog = $_POST['prog'];
     $var_yearsem= $_POST['yearsem'];
-    $var_block = $_POST['block'];
-    $var_roomno = $_POST['roomno'];
     $var_email = $_POST['email'];
     $var_address = $_POST['address'];
     $var_gender = $_POST['gender'];
     $var_phoneno = $_POST['phoneno'];
 
 
-    $result = mysqli_query ($link,"INSERT INTO regstud (studentname, matricno,faculty, prog, yearsem, block, roomno, email, address, gender, phoneno) VALUES ('$var_studentname','$var_matricno', '$var_faculty','$var_prog', '$var_yearsem','$var_block','$var_roomno', '$var_email', '$var_address','$var_gender','$var_phoneno') ");
+    $result = mysqli_query ($link,"INSERT INTO regstud (studentname, matricno,faculty, prog, yearsem, email, address, gender, phoneno) VALUES ('$var_studentname','$var_matricno', '$var_faculty','$var_prog', '$var_yearsem', '$var_email', '$var_address','$var_gender','$var_phoneno') ");
 
     //checking either success or not
     if ($result) {
@@ -71,14 +69,6 @@ if(isset($_POST['submit'])){
             <p class="left">
             <label for="yearsem">Year/Semester</label>
             <input type="text" name="yearsem" required=" " />
-          </p>
-          <p class="left">
-            <label for="block">Block</label>
-            <input type="text" name="block" required=" " />      
-          </p>     
-          <p class="left">
-            <label for="roomno">Room NO</label>
-            <input type="text" name="roomno" required=" " />
           </p>
           <p>
             <label for="email">Email <span class="req">*</span></label>
