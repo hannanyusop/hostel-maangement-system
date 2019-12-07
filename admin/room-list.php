@@ -19,12 +19,12 @@ if(isset($_GET['data']))
     $valueToSearch = $_GET['data'];
     // search in all table columns
     // using concat mysql function
-    $query ="SELECT *,r.id,r.status as roomStatus as room_id FROM `rooms` as r LEFT JOIN block as b ON b.id=r.block_id WHERE CONCAT( `rNo`) LIKE '%".$valueToSearch."%' ";
+    $query ="SELECT *,r.id as room_id,r.status as roomStatus FROM `rooms` as r LEFT JOIN block as b ON b.id=r.block_id WHERE CONCAT( `rNo`) LIKE '%".$valueToSearch."%' ";
     $search_result = filterTable($query);
     
 }
  else {
-    $query = "SELECT *,r.id as room_id FROM rooms as r LEFT JOIN block as b ON b.id=r.block_id LIMIT 20 OFFSET 20";
+    $query = "SELECT *,r.id as room_id,r.status as roomStatus FROM rooms as r LEFT JOIN block as b ON b.id=r.block_id LIMIT 20 OFFSET 20";
     $search_result = filterTable($query);
 }
 
