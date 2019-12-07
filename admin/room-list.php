@@ -19,7 +19,7 @@ if(isset($_GET['data']))
     $valueToSearch = $_GET['data'];
     // search in all table columns
     // using concat mysql function
-    $query ="SELECT *,r.id as room_id FROM `rooms` as r LEFT JOIN block as b ON b.id=r.block_id WHERE CONCAT( `rNo`) LIKE '%".$valueToSearch."%' ";
+    $query ="SELECT *,r.id,r.status as roomStatus as room_id FROM `rooms` as r LEFT JOIN block as b ON b.id=r.block_id WHERE CONCAT( `rNo`) LIKE '%".$valueToSearch."%' ";
     $search_result = filterTable($query);
     
 }
@@ -62,7 +62,7 @@ function filterTable($query)
                 <tr>
                     <td><?php echo $row['rNo'];?></td>
                     <td><?php echo $row['name'];?></td>
-                    <td><?= getRoomStatus($row['status']) ?></td>
+                    <td><?= getRoomStatus($row['roomStatus']) ?></td>
                     <td><?= $row['price'];?></td>
                     <td>
                     <a href="room-edit.php?id=<?= $row["room_id"]; ?>">Edit</a> |
