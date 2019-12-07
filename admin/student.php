@@ -8,9 +8,9 @@
         $var_matricno=$_GET['matricno'];
     }
 
-    if(isset($_POST['search'])) {
-        $valueToSearch = $_POST['valueToSearch'];
-        $query ="SELECT * FROM `regstud` WHERE CONCAT( `studentname`, `matricno`, `yearsem`, `block`) LIKE '%".$valueToSearch."%' ";
+    if(isset($_GET['search'])) {
+        $valueToSearch = $_GET['search'];
+        $query ="SELECT * FROM regstud as s LEFT JOIN rooms as r ON r.studentid=s.id WHERE CONCAT(studentname, matricno) LIKE '%".$valueToSearch."%' ";
         $search_result = filterTable($query);
 
     } else {
@@ -28,9 +28,9 @@
 ?>
     <body>
         
-        <form  method="post">
-            <input type="text" name="valueToSearch" placeholder="Value To Search"><br><br>
-            <input type="submit" name="search" value="Filter"><br><br>
+        <form  method="get">
+            <input type="text" name="search" placeholder="Matric No/Name" value="<?= (isset($_GET['search']))? $_GET['search'] : '' ?>"><br><br>
+            <input type="submit" value="Filter"><br><br>
             
             <table>
                 <tr>

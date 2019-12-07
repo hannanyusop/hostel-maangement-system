@@ -25,8 +25,8 @@
         $result = $_POST['submit'];
 
 
-        if($result = "Accept"){
 
+        if($result == "Accept"){
 
             #status = 2 mean confirmed
             if(!$link->query("UPDATE rooms SET status=2 WHERE id=$booking[roomId]")){
