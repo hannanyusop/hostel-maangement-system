@@ -42,6 +42,7 @@ function getRoomStatus($status = null){
     $statuses = [
         0 => 'Available',
         1 => 'Not Available',
+        2 => 'Reserved'
     ];
 
     return (is_null($status))? $statuses : $statuses[$status];
